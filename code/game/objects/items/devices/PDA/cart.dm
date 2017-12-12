@@ -27,11 +27,11 @@
 
 	var/obj/item/radio/integrated/radio = null
 
-	var/access = 0 //Bit flags_1 for cartridge access
+	var/access = 0 //Bit flags for cartridge access
 
 	var/remote_door_id = ""
 
-	var/bot_access_flags = 0 //Bit flags_1. Selection: SEC_BOT | MULE_BOT | FLOOR_BOT | CLEAN_BOT | MED_BOT
+	var/bot_access_flags = 0 //Bit flags. Selection: SEC_BOT | MULE_BOT | FLOOR_BOT | CLEAN_BOT | MED_BOT
 	var/spam_enabled = 0 //Enables "Send to All" Option
 
 	var/obj/item/device/pda/host_pda = null
@@ -192,14 +192,14 @@
 
 /obj/item/cartridge/proc/post_status(command, data1, data2)
 
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(1435)
+	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
 
 	if(!frequency)
 		return
 
 	var/datum/signal/status_signal = new
 	status_signal.source = src
-	status_signal.transmission_method = 1
+	status_signal.transmission_method = TRANSMISSION_RADIO
 	status_signal.data["command"] = command
 
 	switch(command)

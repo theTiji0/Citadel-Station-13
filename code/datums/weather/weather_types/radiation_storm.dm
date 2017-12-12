@@ -54,7 +54,7 @@
 	revoke_maint_all_access() // Need to make this a timer at some point.
 
 /datum/weather/rad_storm/proc/status_alarm(command)	//Makes the status displays show the radiation warning for those who missed the announcement.
-	var/datum/radio_frequency/frequency = SSradio.return_frequency(1435)
+	var/datum/radio_frequency/frequency = SSradio.return_frequency(FREQ_STATUS_DISPLAYS)
 
 	if(!frequency)
 		return
@@ -62,7 +62,7 @@
 	var/datum/signal/status_signal = new
 	var/atom/movable/virtualspeaker/virt = new /atom/movable/virtualspeaker(null)
 	status_signal.source = virt
-	status_signal.transmission_method = 1
+	status_signal.transmission_method = TRANSMISSION_RADIO
 	status_signal.data["command"] = "shuttle"
 
 	if(command == "alert")
