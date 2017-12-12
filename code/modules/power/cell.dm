@@ -23,7 +23,7 @@
 /obj/item/stock_parts/cell/get_cell()
 	return src
 
-/obj/item/stock_parts/cell/New()
+/obj/item/stock_parts/cell/Initialize()
 	. = ..()
 	START_PROCESSING(SSobj, src)
 	charge = maxcharge
@@ -73,7 +73,7 @@
 		return 0
 	charge = (charge - amount)
 	if(!istype(loc, /obj/machinery/power/apc))
-		SSblackbox.record_feedback("tally", "cell_used", 1, "[src.type]")
+		SSblackbox.record_feedback("tally", "cell_used", 1, type)
 	return 1
 
 // recharge the cell
