@@ -13,6 +13,7 @@
 	var/obj/item/implant/imp = null
 	var/imp_type
 
+
 /obj/item/implantcase/update_icon()
 	if(imp)
 		icon_state = "implantcase-[imp.item_color]"
