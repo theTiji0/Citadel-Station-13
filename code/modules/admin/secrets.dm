@@ -43,6 +43,8 @@
 
 	if(check_rights(R_FUN,0))
 		dat += {"
+			<B>Fun Secrets</B><BR>
+			<BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=virus'>Trigger a Virus Outbreak</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=monkey'>Turn all humans into monkeys</A><BR>
 			<A href='?src=[REF(src)];[HrefToken()];secrets=anime'>Chinese Cartoons</A><BR>
