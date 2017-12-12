@@ -54,3 +54,4 @@
 		add_overlay(collar)
 	if(pettag)
 		add_overlay(pettag)
+
