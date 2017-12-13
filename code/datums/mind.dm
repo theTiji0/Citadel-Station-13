@@ -578,8 +578,8 @@
 
 		sections["revolution"] = text
 
-		/** Abductors **/
-		text = "Abductor"
+		/** ABDUCTION **/
+		text = "abductor"
 		if(SSticker.mode.config_tag == "abductor")
 			text = uppertext(text)
 		text = "<i><b>[text]</b></i>: "
