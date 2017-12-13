@@ -250,17 +250,6 @@
 		return //won't work if dead
 	robot_alerts()
 
-//for borg hotkeys, here module refers to borg inv slot, not core module
-/mob/living/silicon/robot/verb/cmd_toggle_module(module as num)
-	set name = "Toggle Module"
-	set hidden = 1
-	toggle_module(module)
-
-/mob/living/silicon/robot/verb/cmd_unequip_module()
-	set name = "Unequip Module"
-	set hidden = 1
-	uneq_active()
-
 /mob/living/silicon/robot/proc/robot_alerts()
 	var/dat = ""
 	for (var/cat in alarms)
@@ -539,6 +528,19 @@
 			toner = tonermax
 			qdel(W)
 			to_chat(user, "<span class='notice'>You fill the toner level of [src] to its max capacity.</span>")
+
+	else if(istype(W, /obj/item/device/flashlight))
+		if(!opened)
+			to_chat(user, "<span class='warning'>You need to open the panel to repair the headlamp!</span>")
+		if(lamp_cooldown <= world.time)
+			to_chat(user, "<span class='warning'>The headlamp is already functional!</span>")
+		else
+			if(!user.temporarilyRemoveItemFromInventory(W))
+				to_chat(user, "<span class='warning'>[W] seems to be stuck to your hand. You'll have to find a different light.</span>")
+				return
+			lamp_cooldown = 0
+			qdel(W)
+			to_chat(user, "<span class='notice'>You replace the headlamp bulbs.</span>")
 	else
 		return ..()
 
