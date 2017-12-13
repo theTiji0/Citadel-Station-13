@@ -294,10 +294,8 @@
 	if(jobban_isbanned(src,rank))
 		return 0
 	if(!job.player_old_enough(src.client))
-		return FALSE
-	if(job.required_playtime_remaining(client))
 		return 0
-	if(CONFIG_GET(flag/enforce_human_authority) && !client.prefs.pref_species.qualifies_for_rank(rank, client.prefs.features))
+	if(job.required_playtime_remaining(client))
 		return 0
 	return 1
 
@@ -305,7 +303,7 @@
 /mob/dead/new_player/proc/AttemptLateSpawn(rank)
 	if(!IsJobAvailable(rank))
 		alert(src, "[rank] is not available. Please try another.")
-		return 0
+		return FALSE
 
 	if(SSticker.late_join_disabled)
 		alert(src, "An administrator has disabled late join spawning.")
