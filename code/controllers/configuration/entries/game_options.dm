@@ -243,9 +243,11 @@
 	value = 14
 	min_val = 4
 
-CONFIG_DEF(flag/allow_crew_objectives)
-CONFIG_DEF(flag/allow_miscreants)
-CONFIG_DEF(flag/allow_extended_miscreants)
+/datum/config_entry/flag/allow_crew_objectives
+
+/datum/config_entry/flag/allow_miscreants
+
+/datum/config_entry/flag/allow_extended_miscreants
 
 /datum/config_entry/number/bombcap/ValidateAndSet(str_val)
 	. = ..()
