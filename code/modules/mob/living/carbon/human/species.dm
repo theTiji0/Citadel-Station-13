@@ -1092,7 +1092,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/get_spans()
 	return list()
 
-/datum/species/proc/check_weakness(obj/item/weapon, mob/living/attacker)
+/datum/species/proc/check_weakness(obj/item, mob/living/attacker)
 	return 0
 
 ////////

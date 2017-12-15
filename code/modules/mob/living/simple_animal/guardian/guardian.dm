@@ -57,7 +57,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 	. = ..()
 
 /mob/living/simple_animal/hostile/guardian/med_hud_set_health()
-	if(!QDELETED(summoner))
+	if(summoner)
 		var/image/holder = hud_list[HEALTH_HUD]
 		holder.icon_state = "hud[RoundHealth(summoner)]"
 
@@ -257,7 +257,7 @@ GLOBAL_LIST_EMPTY(parasites) //all currently existing/living guardians
 		I.pulledby.stop_pulling()
 
 	I.screen_loc = null // will get moved if inventory is visible
-	I.loc = src
+	I.forceMove(src)
 	I.equipped(src, slot)
 	I.layer = ABOVE_HUD_LAYER
 	I.plane = ABOVE_HUD_PLANE
