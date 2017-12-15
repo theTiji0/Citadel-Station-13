@@ -319,16 +319,15 @@
 	},
 /area/bridge)
 "aaJ" = (
-/obj/machinery/computer/station_alert,
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
+/obj/machinery/computer/rdconsole,
 /turf/open/floor/plasteel/darkyellow/side{
 	dir = 1
 	},
 /area/bridge)
 "aaK" = (
-/obj/machinery/computer/atmos_alert,
 /obj/machinery/requests_console{
 	announcementConsole = 1;
 	department = "Bridge";
@@ -336,6 +335,7 @@
 	name = "Bridge RC";
 	pixel_y = 32
 	},
+/obj/machinery/modular_computer/console/preset/engineering,
 /turf/open/floor/plasteel/darkyellow/side{
 	dir = 1
 	},
@@ -4818,9 +4818,7 @@
 	},
 /area/quartermaster/storage)
 "aiK" = (
-/obj/item/twohanded/required/kirbyplants{
-	icon_state = "plant-22"
-	},
+/obj/structure/closet/crate/bin,
 /turf/open/floor/plasteel/brown{
 	dir = 1
 	},
@@ -4920,9 +4918,7 @@
 /turf/open/floor/plating,
 /area/security/brig)
 "aiV" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/machinery/rnd/protolathe/department/security,
 /turf/open/floor/plasteel/red/side{
 	dir = 8
 	},
@@ -6493,7 +6489,6 @@
 /turf/open/floor/plasteel/neutral,
 /area/quartermaster/storage)
 "alF" = (
-/obj/structure/closet/crate/bin,
 /obj/machinery/power/apc{
 	dir = 4;
 	name = "Cargo Bay APC";
@@ -6503,6 +6498,7 @@
 /obj/structure/cable/white{
 	icon_state = "0-8"
 	},
+/obj/machinery/rnd/protolathe/department/cargo,
 /turf/open/floor/plasteel/brown{
 	dir = 4
 	},
@@ -8955,6 +8951,7 @@
 "apX" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/rnd/protolathe/department/service,
 /turf/open/floor/plasteel,
 /area/crew_quarters/bar/atrium)
 "apY" = (
@@ -19301,12 +19298,18 @@
 /obj/item/stack/sheet/metal/fifty,
 /obj/item/stack/sheet/glass/fifty,
 /obj/item/stack/sheet/glass/fifty,
-/obj/item/crowbar,
-/obj/item/grenade/chem_grenade/smart_metal_foam,
-/obj/item/grenade/chem_grenade/smart_metal_foam,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/item/stack/sheet/rglass{
+	amount = 50;
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/stack/sheet/plasteel/fifty,
+/obj/item/grenade/chem_grenade/smart_metal_foam,
+/obj/item/grenade/chem_grenade/smart_metal_foam,
+/obj/item/crowbar,
 /turf/open/floor/plasteel/yellow/side{
 	dir = 8
 	},
@@ -19970,9 +19973,6 @@
 /turf/open/floor/plasteel/neutral,
 /area/engine/engineering)
 "aKO" = (
-/obj/machinery/computer/station_alert{
-	dir = 8
-	},
 /obj/structure/cable/white{
 	icon_state = "1-8"
 	},
@@ -19981,6 +19981,9 @@
 	},
 /obj/structure/cable/white{
 	icon_state = "4-8"
+	},
+/obj/machinery/computer/rdconsole/production{
+	dir = 8
 	},
 /turf/open/floor/plasteel/yellow/side{
 	dir = 4
@@ -20544,6 +20547,7 @@
 /obj/item/twohanded/required/kirbyplants{
 	icon_state = "plant-21"
 	},
+/obj/machinery/rnd/circuit_imprinter,
 /turf/open/floor/plasteel/yellow/side{
 	dir = 4
 	},
@@ -21074,13 +21078,6 @@
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "aNd" = (
-/obj/structure/table/reinforced,
-/obj/item/stack/sheet/plasteel/fifty,
-/obj/item/stack/sheet/rglass{
-	amount = 50;
-	pixel_x = 2;
-	pixel_y = -2
-	},
 /obj/effect/turf_decal/delivery,
 /obj/machinery/computer/security/telescreen{
 	desc = "Used for watching the Engine.";
@@ -21089,6 +21086,7 @@
 	network = list("Engine");
 	pixel_y = -32
 	},
+/obj/machinery/rnd/protolathe/department/engineering,
 /turf/open/floor/plasteel,
 /area/engine/engineering)
 "aNe" = (
@@ -24712,11 +24710,11 @@
 /turf/open/floor/plasteel,
 /area/science/lab)
 "aUC" = (
-/obj/machinery/rnd/protolathe,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
+/obj/machinery/rnd/protolathe/department/science,
 /turf/open/floor/plasteel,
 /area/science/lab)
 "aUD" = (
@@ -25124,12 +25122,12 @@
 /turf/open/floor/plasteel,
 /area/science/lab)
 "aVv" = (
-/obj/machinery/rnd/circuit_imprinter,
 /obj/item/reagent_containers/glass/beaker/sulphuric,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
+/obj/machinery/rnd/circuit_imprinter/department/science,
 /turf/open/floor/plasteel,
 /area/science/lab)
 "aVw" = (
@@ -26340,6 +26338,12 @@
 	pixel_y = 24
 	},
 /obj/effect/turf_decal/bot,
+/obj/item/storage/box/beakers{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/syringes,
+/obj/item/gun/syringe,
 /turf/open/floor/plasteel,
 /area/medical/medbay/zone3)
 "aXR" = (
@@ -27647,13 +27651,6 @@
 /turf/open/floor/plasteel,
 /area/medical/medbay/zone3)
 "bau" = (
-/obj/structure/table/glass,
-/obj/item/storage/box/beakers{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/storage/box/syringes,
-/obj/item/gun/syringe,
 /obj/machinery/light,
 /obj/structure/noticeboard{
 	dir = 1;
@@ -27663,6 +27660,7 @@
 	dir = 5
 	},
 /obj/effect/turf_decal/bot,
+/obj/machinery/rnd/protolathe/department/medical,
 /turf/open/floor/plasteel,
 /area/medical/medbay/zone3)
 "bav" = (
@@ -34661,6 +34659,17 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
+"swt" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/rnd/protolathe/department/service,
+/turf/open/floor/plasteel/redyellow,
+/area/crew_quarters/bar/atrium)
+"swu" = (
+/obj/machinery/rnd/protolathe/department/medical,
+/turf/closed/wall,
+/area/medical/medbay/zone3)
 
 (1,1,1) = {"
 aaa
