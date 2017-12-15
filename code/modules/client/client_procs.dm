@@ -159,9 +159,9 @@ GLOBAL_LIST(external_rsc_urls)
 
 	GLOB.clients += src
 	GLOB.directory[ckey] = src
-	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
-	GLOB.ahelp_tickets.ClientLogin(src)
 
+	GLOB.ahelp_tickets.ClientLogin(src)
+	var/connecting_admin = FALSE //because de-admined admins connecting should be treated like admins.
 	//Admin Authorisation
 	var/localhost_addresses = list("127.0.0.1", "::1")
 	if(address && (address in localhost_addresses))
